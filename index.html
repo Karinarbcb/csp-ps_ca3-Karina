@@ -1,41 +1,69 @@
+<!-- Copyright (c) Gitpod. All rights reserved.' -->
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Trello Clone</title>
-  <link rel="stylesheet" href="./style.css">
+<html>
+	<head>
+		<script>
+			performance.mark('code/didStartRenderer');
+		</script>
+		<meta charset="utf-8" />
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div id="main">
-  <div class="list">
-    <div class="title removable editable">This is a list</div>
-    <div class="content">
-      <div class="card removable editable">This is a card</div>
-      <div class="card removable editable" style="">Look, another card!</div>
-    </div>
-    <div class="add-card editable">Add another card</div>
-  </div>
-  <div class="list">
-    <div class="title removable editable">Another list</div>
-    <div class="content">
-      <div class="card removable editable">Hello world!</div>
-    </div>
-    <div class="add-card editable">Add another card</div>
-  </div>
-  <div class="list">
-    <div class="title removable editable">Empty list</div>
-    <div class="content"></div>
-    <div class="add-card editable">Add another card</div>
-  </div>
-</div>
+		<!-- Gitpod specific -->
+		<meta id="gitpod-ide-capabilities" data-settings="{&quot;service&quot;:true}">
 
-<div class="add-list">
-  <div class="title editable">Add another list</div>
-</div>
-<!-- partial -->
-  <script src='https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js'></script><script  src="./script.js"></script>
+		<!-- Mobile tweaks -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="Code">
+		<link rel="apple-touch-icon" href="/code-192.png" />
 
-</body>
+		<!-- Disable pinch zooming -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+		<!-- Workbench Configuration -->
+		<meta id="vscode-workbench-web-configuration" data-settings="{{WORKBENCH_WEB_CONFIGURATION}}">
+
+		<!-- Workbench Auth Session -->
+		<meta id="vscode-workbench-auth-session" data-settings="{{WORKBENCH_AUTH_SESSION}}">
+
+		<!-- Workbench Icon/Manifest/CSS -->
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
+		<link data-name="vs/workbench/workbench.web.main" rel="stylesheet" href="https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/out/vs/workbench/workbench.web.main.css">
+
+	</head>
+
+	<body aria-label="">
+	</body>
+
+	<!-- Startup (do not modify order of script tags!) -->
+	<script type="text/javascript" src="https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/supervisor:commit-02c2d26d058ba1e0063641c7e015ef8b5ec37f72/__files__/main.js" charset="utf-8"></script>
+	<script src="https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/out/vs/loader.js"></script>
+	<script src="https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/out/vs/webPackagePaths.js"></script>
+	<script>
+		Object.keys(self.webPackagePaths).map(function (key, index) {
+			self.webPackagePaths[key] = `https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/node_modules/${key}/${self.webPackagePaths[key]}`;
+		});
+		require.config({
+			baseUrl: `https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/out`,
+			recordStats: true,
+			trustedTypesPolicy: window.trustedTypes?.createPolicy('amdLoader', {
+				createScriptURL(value) {
+					return value;
+				}
+			}),
+			paths: {
+				...self.webPackagePaths,
+				'@gitpod/local-app-api-grpcweb': `https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/node_modules/@gitpod/local-app-api-grpcweb/lib/localapp.js`,
+				'@improbable-eng/grpc-web': `https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/node_modules/@improbable-eng/grpc-web/dist/grpc-web-client.umd.js`,
+				'@zip.js/zipjs': `https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/node_modules/@zip.js/zip.js/dist/zip-no-worker-deflate.min.js`
+			}
+		});
+	</script>
+	<script>
+		performance.mark('code/willLoadWorkbenchMain');
+	</script>
+	<script src="https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/out/vs/workbench/workbench.web.main.nls.js"></script>
+	<script src="https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/out/vs/workbench/workbench.web.main.js"></script>
+	<script src="https://blobserve.ws-eu45.gitpod.io/eu.gcr.io/gitpod-core-dev/build/ide/code:commit-824abc8f79ba1a1772d66a59e6fdaed184d3ceea/__files__/out/vs/gitpod/browser/workbench/workbench.js"></script>
 </html>
+
